@@ -1,19 +1,21 @@
 <div align="center">
 
-# TEMPLATE-AppImage 🐧
+# yt-dlp-AppImage 🐧
 
-[![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/TEMPLATE-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest)
-[![CI Build Status](https://github.com/pkgforge-dev/TEMPLATE-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest)
-[![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/TEMPLATE-AppImage)](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest)
+[![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/yt-dlp-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/yt-dlp-AppImage/releases/latest)
+[![CI Build Status](https://github.com/pkgforge-dev/yt-dlp-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/yt-dlp-AppImage/releases/latest)
+[![Latest Stable Release](https://img.shields.io/github/v/release/pkgforge-dev/yt-dlp-AppImage)](https://github.com/pkgforge-dev/yt-dlp-AppImage/releases/latest)
 
 <p align="center">
-  <img src="https://github.com/pkgforge-dev.png" width="128" />
+  <img src="https://github.com/yt-dlp.png" width="128" />
 </p>
 
 
 | Latest Stable Release | Upstream URL |
 | :---: | :---: |
-| [Click here](https://github.com/pkgforge-dev/TEMPLATE-AppImage/releases/latest) | [Click here](https://github.com/pkgforge-dev/Anylinux-AppImages) |
+| [Click here](https://github.com/pkgforge-dev/yt-dlp-AppImage/releases/latest) | [Click here](https://github.com/yt-dlp/yt-dlp) |
+
+yt-dlp used to offer fully static pyinstaller executables, so there was no point in making an AppImage, however this changed and upstream is not interested in bringing those back: https://github.com/yt-dlp/yt-dlp/issues/14694
 
 </div>
 
