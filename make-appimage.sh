@@ -12,8 +12,14 @@ export DESKTOP=DUMMY
 export MAIN_BIN=yt-dlp
 export DEPLOY_PYTHON=1
 
+# on archlinuxarm deno is still not dependency of yt-dlp
+set --
+if deno=$(command -v deno); then
+	set -- "$deno"
+fi
+
 # Deploy dependencies
-quick-sharun /usr/bin/yt-dlp /usr/bin/deno
+quick-sharun /usr/bin/yt-dlp "$@"
 
 # Additional changes can be done in between here
 
