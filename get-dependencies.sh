@@ -6,11 +6,18 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm yt-dlp
+pacman -Syu --noconfirm yt-dlp bun
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ! mesa ! vulkan
+
+# yt-dlp-ejs archlinux package has a hard dependency on deno
+# but this can actually use bun instead
+pacman -Rdd --noconfirm deno
+
+# yt-dlp also gives a warning that only deno is supported by default
+sed -i -e "s|default=\['deno'\]|default=['bun']|" /usr/lib/python*/site-packages/yt_dlp/options.py 
 
 # Comment this out if you need an AUR package
 #make-aur-package PACKAGENAME
