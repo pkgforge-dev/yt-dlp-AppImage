@@ -12,6 +12,10 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ! mesa ! vulkan
 
+# yt-dlp-ejs archlinux package has a hard dependency on deno
+# but this can actually use bun instead
+pacman -Rdd --noconfirn deno
+
 # Comment this out if you need an AUR package
 #make-aur-package PACKAGENAME
 
