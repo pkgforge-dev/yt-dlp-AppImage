@@ -6,7 +6,7 @@ ARCH=$(uname -m)
 
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
-pacman -Syu --noconfirm yt-dlp bun
+# pacman -Syu --noconfirm yt-dlp bun
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
