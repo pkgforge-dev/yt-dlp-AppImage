@@ -12,15 +12,16 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ! mesa ! vulkan
 
-# yt-dlp-ejs archlinux package has a hard dependency on deno
-# but this can actually use bun instead
-pacman -Rdd --noconfirm deno
+# build yt-dlp and its dependencies since archlinuxarm is insanely out of date
+# remove deno dependency since we are going to use bun
+export PRE_BUILD_CMDS="sed -i -e 's|deno||g' ./PKGBUILD"
+make-aur-package --archlinux-pkg yt-dlp-ejs
+make-aur-package --archlinux-pkg yt-dlp
+unset PRE_BUILD_CMDS
+make-aur-package --archlinux-pkg bun
 
-# yt-dlp also gives a warning that only deno is supported by default
-sed -i -e "s|default=\['deno'\]|default=['bun']|" /usr/lib/python*/site-packages/yt_dlp/options.py 
-
-# Comment this out if you need an AUR package
-#make-aur-package PACKAGENAME
+# yt-dlp gives a warning that only deno is supported by default
+sed -i -e "s|default=\['deno'\]|default=['bun']|" /usr/lib/python*/site-packages/yt_dlp/options.py
 
 # If the application needs to be manually built that has to be done down here
 
