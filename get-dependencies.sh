@@ -12,7 +12,7 @@ echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano ! mesa ! vulkan
 
-make-aur-package --archlinux-pkg bun
+make-aur-package bun-bin
 
 # build yt-dlp and its dependencies since archlinuxarm is insanely out of date
 # remove deno dependency since we are going to use bun
