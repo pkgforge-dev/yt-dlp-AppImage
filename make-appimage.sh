@@ -13,7 +13,7 @@ export MAIN_BIN=yt-dlp
 export DEPLOY_PYTHON=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/yt-dlp /usr/bin/bun
+quick-sharun /usr/bin/yt-dlp /usr/bin/qjs
 
 # Additional changes can be done in between here
 
