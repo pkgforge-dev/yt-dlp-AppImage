@@ -22,6 +22,8 @@ git clone https://github.com/bellard/quickjs ./quickjs && (
 
 # build yt-dlp and its dependencies since archlinuxarm is insanely out of date
 # remove deno dependency since we are going to use quickjs
+# npm is needed to build yt-dlp-ejs (it requires a JS package manager)
+pacman -S --noconfirm npm
 export PRE_BUILD_CMDS="sed -i -e 's|deno||g' ./PKGBUILD"
 make-aur-package --archlinux-pkg yt-dlp-ejs
 make-aur-package --archlinux-pkg yt-dlp
